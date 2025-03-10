@@ -125,7 +125,7 @@ class SmartTSA(IStrategy):
         # print(current_pair)
 
         # One-time refresher
-        if current_pair == "BTC/USDT":
+        if current_pair == "BTC/USDT:USDT":
             print("Waiting 12 minutes before tradings...")
             time.sleep(720)
             print("Refreshing data...")
@@ -233,7 +233,7 @@ class SmartTSA(IStrategy):
     def leverage(self, pair: str, current_time: datetime, current_rate: float,
                  proposed_leverage: float, max_leverage: float, entry_tag: Optional[str], side: str,
                  **kwargs) -> float:
-        if pair == 'BTC/USDT' or pair == 'ETH/USDT':
+        if pair == 'BTC/USDT:USDT' or pair == 'ETH/USDT:USDT':
             return 5.0
 
         return 3.0
