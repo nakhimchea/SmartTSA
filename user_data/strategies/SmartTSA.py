@@ -24,7 +24,7 @@ def quote_symbols_list(quote='USDT') -> dict.keys:
 
 
 def lunarcrush_entry_pairs() -> tuple:
-    data_path = os.path.join('/home', 'smarttsa', 'user_data', 'strategies', 'lunarcrush')
+    data_path = os.path.join('user_data', 'strategies', 'lunarcrush')
     files = os.listdir(data_path)
     usdt_pairs = quote_symbols_list('USDT')
     # print("USDT pair length: ", usdt_pairs.__len__())
