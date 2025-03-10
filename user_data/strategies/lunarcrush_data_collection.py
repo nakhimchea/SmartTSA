@@ -16,7 +16,7 @@ def request_lunar_crush():
         print("Finished creating folders now!")
 
     # Getting data list --------------------------------------------
-    api_key = 'qafcb20jjlvzz5ag870n4skbm82iqw8l4y9vutk'
+    api_key = ''
     url = "https://lunarcrush.com/api4/public/coins/list/v1"
     headers = {'Authorization': 'Bearer {0}'.format(api_key)}
     response = requests.request("GET", url, headers=headers)

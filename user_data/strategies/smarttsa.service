@@ -1,12 +1,12 @@
 [Unit]
-Description=Successful Bot 3x
+Description=SmartTSA
 After=network.target
 Conflicts=getty@tty1.service
 
 [Service]
 Type=simple
-WorkingDirectory=/home/smarttsa
-ExecStart=/usr/bin/python3 main.py trade --config config.json --strategy SmartTSA
+WorkingDirectory=/home/ubuntu/SmartTSA
+ExecStart=/usr/bin/python -m freqtrade trade --config config.json --strategy SmartTSA
 StandardInput=tty-force
 Restart=always
 User=root
