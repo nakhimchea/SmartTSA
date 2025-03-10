@@ -1,0 +1,123 @@
+
+{
+    "$schema": "https://schema.freqtrade.io/schema.json",
+    "max_open_trades": 3,
+    "stake_currency": "USDT",
+    "stake_amount": "unlimited",
+    "amend_last_stake_amount": true,
+    "tradable_balance_ratio": 0.99,
+    "fiat_display_currency": "USD",
+    "dry_run": true,
+    "dry_run_wallet": 1000,
+    "cancel_open_orders_on_exit": true,
+    "strategy": "SmartTSA",
+    "trading_mode": "futures",
+    "margin_mode": "isolated",
+    "order_types": {
+        "entry": "market",
+        "exit": "market",
+        "emergency_exit": "market",
+        "force_exit": "market",
+        "force_entry": "market",
+        "stoploss": "market",
+        "stoploss_on_exchange": false
+    },
+    "unfilledtimeout": {
+        "entry": 1,
+        "exit": 1,
+        "exit_timeout_count": 0,
+        "unit": "minutes"
+    },
+    "entry_pricing": {
+        "price_side": "other",
+        "use_order_book": true,
+        "order_book_top": 2,
+        "price_last_balance": 0.0,
+        "check_depth_of_market": {
+            "enabled": false,
+            "bids_to_ask_delta": 1
+        }
+    },
+    "exit_pricing":{
+        "price_side": "other",
+        "use_order_book": true,
+        "order_book_top": 2
+    },
+    "exchange": {
+        "name": "binance",
+        "key": "",
+        "secret": "",
+        "ccxt_config": {},
+        "ccxt_async_config": {},
+        "pair_whitelist": [
+            "BTC/USDT",
+            "ETH/USDT",
+            "SOL/USDT",
+            "AVAX/USDT",
+            "NEAR/USDT",
+            "DOT/USDT",
+            "LINK/USDT",
+            "ADA/USDT",
+            "XRP/USDT",
+            "ALGO/USDT",
+            "EGLD/USDT",
+            "FTM/USDT",
+            "AAVE/USDT",
+            "MATIC/USDT",
+            "APE/USDT",
+            "BAND/USDT"
+        ],
+        "pair_blacklist": [
+        ]
+    },
+    "pairlists": [
+        {
+            "method": "StaticPairList",
+            "number_assets": 16,
+            "sort_key": "quoteVolume",
+            "min_value": 0,
+            "refresh_period": 1800
+        }
+    ],
+    "edge": {
+        "enabled": false,
+        "process_throttle_secs": 3600,
+        "calculate_since_number_of_days": 31,
+        "allowed_risk": 0.02,
+        "stoploss_range_min": -0.01,
+        "stoploss_range_max": -0.07,
+        "stoploss_range_step": -0.01,
+        "minimum_winrate": 0.67,
+        "minimum_expectancy": 0.67,
+        "min_trade_number": 50,
+        "max_trade_duration_minute": 1440,
+        "remove_pumps": true
+    },
+    "telegram": {
+        "enabled": false,
+        "token": "",
+        "chat_id": "",
+        "keyboard": [
+            []
+        ]
+    },
+    "api_server": {
+        "enabled": false,
+        "listen_ip_address": "127.0.0.1",
+        "listen_port": 8080,
+        "verbosity": "error",
+        "enable_openapi": false,
+        "jwt_secret_key": "3004242a2e5a097aa7990c21670ddaa15b91115a7b4186a3483d2805ba92e73d",
+        "ws_token": "1FW-R9OVR7glOLLPerpUhnL2htMQXMvX-g",
+        "CORS_origins": [],
+        "username": "smart",
+        "password": ""
+    },
+    "timeout": 100000,
+    "bot_name": "Smart TSA",
+    "initial_state": "running",
+    "force_entry_enable": true,
+    "internals": {
+        "process_throttle_secs": 5
+    }
+}

@@ -1,0 +1,16 @@
+[Unit]
+Description=Successful Bot 3x
+After=network.target
+Conflicts=getty@tty1.service
+
+[Service]
+Type=simple
+WorkingDirectory=/home/trading_bot_server_3x/freqtrade
+ExecStart=/usr/bin/python3 main.py trade --config config.json --strategy SmartTSA
+StandardInput=tty-force
+Restart=always
+User=root
+Group=admin
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,16 @@
+[Unit]
+Description=Data Collection from LunarCrush
+After=network.target
+Conflicts=getty@tty1.service
+
+[Service]
+Type=simple
+WorkingDirectory=/home/trading_bot_server_3x/freqtrade/user_data/strategies
+ExecStart=/usr/bin/python lunarcrush_data_collection.py
+StandardInput=tty-force
+Restart=always
+User=root
+Group=admin
+
+[Install]
+WantedBy=multi-user.target
