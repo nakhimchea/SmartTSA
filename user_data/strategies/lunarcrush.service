@@ -6,7 +6,7 @@ Conflicts=getty@tty1.service
 [Service]
 Type=simple
 WorkingDirectory=/home/ubuntu/SmartTSA/user_data/strategies
-ExecStart=/usr/bin/python lunarcrush_data_collection.py
+ExecStart=/usr/bin/python3 lunarcrush_data_collection.py
 StandardInput=tty-force
 Restart=always
 User=root
