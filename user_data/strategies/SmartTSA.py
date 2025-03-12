@@ -200,6 +200,8 @@ class SmartTSA(IStrategy):
                             side: str, **kwargs) -> bool:
         if current_time.hour % 4 < 1 and 12 <= current_time.minute <= 20:
             return True
+        elif entry_tag == "exe":
+            return True
         else:
             return False
 
