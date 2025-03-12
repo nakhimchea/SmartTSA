@@ -1,16 +1,20 @@
 [Unit]
 Description=SmartTSA Bot
 After=network.target
-Conflicts=getty@tty1.service
 
 [Service]
 Type=simple
+User=ubuntu
+Group=ubuntu
+
 WorkingDirectory=/home/ubuntu/SmartTSA
-ExecStart=/usr/bin/python3 -m freqtrade trade --config "user_data/config.json" --strategy SmartTSA
-StandardInput=tty-force
+ExecStart=/usr/bin/python3 -m freqtrade trade --config /home/ubuntu/SmartTSA/user_data/config.json --strategy SmartTSA
+
 Restart=always
-User=root
-Group=admin
+RestartSec=5
+
+StandardOutput=journal
+StandardError=journal
 
 [Install]
 WantedBy=multi-user.target
